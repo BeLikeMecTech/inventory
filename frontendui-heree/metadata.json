@@ -1,0 +1,7 @@
+{
+  "name": "Broadcast Inventory Pro",
+  "description": "A professional-grade inventory management system for broadcast equipment, featuring AI-assisted auditing and category-based tracking.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
