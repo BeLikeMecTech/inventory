@@ -1,0 +1,43 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model EquipmentItem {
+  id          String   @id @default(uuid())
+  name        String
+  category    String
+  status      String
+  location    String?
+  vendor      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model User {
+  id    String @id @default(uuid())
+  name  String
+  role  String
+}
+
+model Vendor {
+  id   String @id @default(uuid())
+  name String
+}
+
+model Location {
+  id   String @id @default(uuid())
+  name String
+}
+
+model Log {
+  id        String   @id @default(uuid())
+  action    String
+  itemId    String?
+  user      String
+  timestamp DateTime @default(now())
+}
